@@ -16,7 +16,7 @@ export default function Component() {
       y: Math.random() * 100,
       size: Math.random() * 50 + 20,
     }))
-    // @ts-ignore
+    // @ts-expect-error willFixLater
     setBackgroundShapes(shapes)
   }, [])
 
@@ -250,17 +250,17 @@ export default function Component() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4 relative overflow-hidden">
       {backgroundShapes.map((shape) => (
         <motion.div
-        // @ts-ignore
+        // @ts-expect-error willFixLater
           key={shape.id}
           className="absolute rounded-full bg-blue-500 opacity-10"
           style={{
-            // @ts-ignore
+            // @ts-expect-error willFixLater
             left: `${shape.x}%`,
-            // @ts-ignore
+            // @ts-expect-error willFixLater
             top: `${shape.y}%`,
-            // @ts-ignore
+            // @ts-expect-error willFixLater
             width: shape.size,
-            // @ts-ignore
+            // @ts-expect-error willFixLater
             height: shape.size,
           }}
           animate={{
