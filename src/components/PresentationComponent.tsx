@@ -235,14 +235,16 @@ export default function Component() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-purple-100 p-4">
-      <Card className="w-full max-w-4xl min-h-[60vh] flex flex-col">
-        <CardContent className="flex-grow flex flex-col p-6">
+      <Card className="w-full max-w-4xl h-[600px] flex flex-col">
+        <CardContent className="flex-grow flex flex-col p-6 overflow-hidden">
           <h2 className="text-3xl font-bold mb-4">{slides[currentSlide].title}</h2>
-          <div className="flex-grow overflow-y-auto">
-            {slides[currentSlide].content}
+          <div className="flex-grow flex items-center justify-center overflow-y-auto">
+            <div className="max-h-full overflow-y-auto pr-4">
+              {slides[currentSlide].content}
+            </div>
           </div>
         </CardContent>
-        <div className="flex justify-between p-4">
+        <div className="flex justify-between p-4 border-t">
           <Button onClick={prevSlide} variant="outline" size="icon">
             <ChevronLeft className="h-4 w-4" />
           </Button>
